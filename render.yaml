@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: c1-wedding
+    env: static
+    buildCommand: ""
+    staticPublishPath: ./
