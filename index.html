@@ -4,14 +4,15 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pavan & Padma's Wedding Invitation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     :root {
-      --bg-light: #F7F7F7;
-      --bg-taupe: #D6D6D6;
+      --bg-light: #FDFBF7;
+      --bg-taupe: #F5ECD8;
       --bg-white: #FFFFFF;
-      --text-dark: #000000;
-      --border-color: #E2E2E2;
+      --text-dark: #6B1515;
+      --border-color: #C5A059;
+      --gold-accent: #C5A059;
       --font-serif: 'Cormorant Garamond', serif;
       --font-sans: 'DM Sans', sans-serif;
     }
@@ -26,101 +27,103 @@
       padding: 0 5%; height: 80px; background: transparent; transition: background 0.4s ease, box-shadow 0.4s ease;
     }
     nav.scrolled { background: var(--bg-light); box-shadow: 0 2px 15px rgba(0,0,0,0.05); }
-    .nav-logo { font-family: var(--font-serif); font-size: 1.8rem; font-style: italic; color: var(--text-dark); text-decoration: none; }
+    .nav-logo { font-family: var(--font-serif); font-size: 1.8rem; font-style: italic; color: var(--text-dark); text-decoration: none; font-weight: 600; }
     .nav-links { display: flex; gap: 35px; list-style: none; }
-    .nav-links a { color: var(--text-dark); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 400; position: relative; padding-bottom: 4px; }
-    .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--text-dark); transition: width 0.3s; }
+    .nav-links a { color: var(--text-dark); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; position: relative; padding-bottom: 4px; }
+    .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold-accent); transition: width 0.3s; }
     .nav-links a:hover::after { width: 100%; }
 
     /* HERO */
     #hero {
       position: relative;
-      min-height: 100vh; background: var(--bg-light); display: flex;
+      min-height: 100vh;
+      background: linear-gradient(rgba(253, 251, 247, 0.1), rgba(253, 251, 247, 0.4)), url('gemini_temple_bg.png') center/cover no-repeat;
+      display: flex;
       padding-top: 80px;
     }
-    .hero-left { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 5% 5% 5% 10%; z-index: 2; }
-    .hero-right { flex: 1.2; position: relative; display: flex; align-items: center; justify-content: center; z-index: 1; }
-    .hero-img { 
-      width: 100%; height: 85vh; min-height: 500px; object-fit: cover; 
-      object-position: center; border-radius: 2px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Retained box shadow on the image directly */
-      position: absolute; right: 0; top: 10%;
-    }
-    .hero-pretitle { font-size: 1.4rem; font-family: var(--font-serif); margin-bottom: 15px; font-weight: 300; }
-    .hero-title { font-family: var(--font-serif); font-size: clamp(3.5rem, 6vw, 6rem); font-weight: 400; line-height: 1; text-transform: uppercase; margin-bottom: 25px; letter-spacing: 0.05em; }
-    .hero-details { font-size: 0.95rem; line-height: 1.6; margin-bottom: 45px; font-weight: 300; letter-spacing: 0.02em; }
+    .hero-left { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 5% 10%; z-index: 2; margin: 0 auto; }
+    .hero-pretitle { font-size: 1.2rem; font-family: var(--font-serif); margin-bottom: 25px; font-weight: 600; letter-spacing: 0.1em; color: var(--text-dark); text-transform: uppercase; }
+    .hero-title { font-family: var(--font-serif); font-size: clamp(3.5rem, 6vw, 5.5rem); font-weight: 600; line-height: 1.1; margin-bottom: 20px; letter-spacing: 0.05em; color: var(--text-dark); }
+    .hero-title span { font-size: 0.4em; font-style: italic; font-weight: 500; display: block; margin: 15px 0; color: var(--gold-accent); letter-spacing: normal; text-transform: lowercase; }
+    .hero-details { font-size: 1.1rem; line-height: 1.8; margin-bottom: 45px; font-weight: 400; letter-spacing: 0.02em; }
     .btn-outline { 
-      display: inline-block; padding: 15px 45px; border: 1px solid var(--text-dark); 
+      display: inline-block; padding: 15px 45px; border: 1px solid var(--gold-accent); 
       border-radius: 999px; text-decoration: none; color: var(--text-dark); 
-      font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
-      transition: all 0.4s ease; cursor: pointer; align-self: flex-start;
-      background: transparent;
+      font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
+      font-weight: 500;
+      transition: all 0.4s ease; cursor: pointer; align-self: center;
+      background: var(--bg-white);
     }
-    .btn-outline:hover { background: var(--text-dark); color: var(--bg-white); }
+    .btn-outline:hover { background: var(--text-dark); color: var(--gold-accent); border-color: var(--text-dark); }
 
-    /* EVENTS (Taupe section) */
+    /* STORY / FAMILY DETAILS */
+    #story { background: var(--bg-white); padding: 120px 5%; text-align: center; }
+    .story-top { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+    .story-title { font-family: var(--font-serif); font-size: clamp(2.5rem, 4vw, 3.5rem); font-weight: 600; line-height: 1.2; margin-bottom: 40px; color: var(--text-dark); }
+    .story-text { font-size: 1.15rem; line-height: 2; font-weight: 400; color: #333; }
+    .story-text p { margin-bottom: 20px; }
+    .story-text strong { color: var(--text-dark); font-weight: 700; font-size: 1.6rem; font-family: var(--font-serif); display: block; margin-top: 15px; }
+    .story-invite-text { margin-bottom: 40px; }
+    .story-weds { margin: 30px 0; font-family: var(--font-serif); font-style: italic; font-size: 1.8rem; color: var(--gold-accent); }
+    .story-bride-parents { margin-top: 15px; }
+    .story-blessings-wrap { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border-color); }
+    .story-blessings-title { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 600; color: var(--text-dark); }
+
+    /* EVENTS (Wix style Parallax section) */
     #events { background: var(--bg-taupe); padding: 140px 5%; display: flex; gap: 8%; align-items: center; position: relative; margin-top: 15vh; }
     .events-left { flex: 1; }
-    .events-title { font-family: var(--font-serif); font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 400; line-height: 1.1; margin-bottom: 50px; }
-    .events-img-wrap { width: 90%; height: 65vh; min-height: 400px; position: relative; box-shadow: 0 15px 40px rgba(0,0,0,0.1); border-radius: 2px; overflow: hidden; }
+    .events-title { font-family: var(--font-serif); font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 600; line-height: 1.1; margin-bottom: 50px; color: var(--text-dark); }
+    .events-img-wrap { width: 90%; height: 65vh; min-height: 400px; position: relative; box-shadow: 0 15px 40px rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden; }
     .events-img { width: 100%; height: 130%; object-fit: cover; position: absolute; top: -15%; left: 0; }
     .events-right { flex: 1; display: flex; flex-direction: column; gap: 70px; padding-top: 0; }
     .event-item { display: flex; gap: 28px; align-items: flex-start; }
-    .event-num { font-family: var(--font-serif); font-size: 1.8rem; color: var(--text-dark); font-style: italic; }
-    .event-info h3 { font-family: var(--font-serif); font-size: 2.2rem; font-weight: 400; margin-bottom: 12px; }
-    .event-info p { font-size: 0.95rem; line-height: 1.6; font-weight: 300; margin-bottom: 4px; }
-
-    /* STORY / COUPLE (White section) */
-    #story { background: var(--bg-white); padding: 140px 5%; }
-    .story-top { display: flex; gap: 8%; margin-bottom: 100px; align-items: flex-start; }
-    .story-title { flex: 1; font-family: var(--font-serif); font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 400; line-height: 1.1; }
-    .story-text { flex: 1; font-size: 1rem; line-height: 1.8; font-weight: 300; }
-    .story-text p { margin-bottom: 25px; }
-    .story-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-    .story-gallery div { width: 100%; overflow: hidden; border-radius: 2px; }
-    .story-gallery img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; transition: transform 0.6s ease; }
-    .story-gallery div:hover img { transform: scale(1.05); }
+    .event-num { font-family: var(--font-serif); font-size: 1.8rem; color: var(--gold-accent); font-style: italic; font-weight: 600; }
+    .event-info h3 { font-family: var(--font-serif); font-size: 2.2rem; font-weight: 600; margin-bottom: 12px; color: var(--text-dark); }
+    .event-info p { font-size: 0.95rem; line-height: 1.6; font-weight: 400; margin-bottom: 4px; color: #333; }
 
     /* WISHES / QUOTE */
-    #wishes { background: var(--bg-white); padding: 50px 5% 150px; text-align: center; }
-    .quote-text { font-family: var(--font-serif); font-size: clamp(2.5rem, 4vw, 4rem); font-style: normal; max-width: 1000px; margin: 0 auto; line-height: 1.2; font-weight: 400; }
+    #wishes { background: var(--bg-white); padding: 100px 5%; text-align: center; }
+    .quote-text { font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 2.8rem); font-style: normal; max-width: 1000px; margin: 0 auto; line-height: 1.5; font-weight: 600; color: var(--text-dark); }
+    .quote-translation { font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 30px; font-weight: 500; color: #555; }
 
     /* VENUE & FOOTER */
     #footer-venue { background: var(--bg-taupe); padding: 100px 5% 60px; text-align: center; }
-    .footer-title { font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 25px; font-weight: 400; font-style: italic; }
-    .footer-details { font-size: 0.95rem; font-weight: 300; line-height: 1.8; margin-bottom: 50px; }
+    .footer-title { font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 25px; font-weight: 600; color: var(--text-dark); }
+    .footer-details { font-size: 1.1rem; font-weight: 400; line-height: 1.8; margin-bottom: 50px; color: #333; }
     
-    /* REVEAL ANIMATIONS (Wix-style) */
+    /* REVEAL ANIMATIONS */
     .reveal-up, .reveal-left, .reveal-right, .reveal-scale { opacity: 0; transition: all 1.2s cubic-bezier(0.215, 0.61, 0.355, 1); }
     .reveal-up { transform: translateY(50px); }
     .reveal-left { transform: translateX(-40px); }
     .reveal-right { transform: translateX(40px); }
     .reveal-scale { transform: scale(1.05); }
-    
     .reveal-up.visible, .reveal-left.visible, .reveal-right.visible { opacity: 1; transform: translate(0, 0); }
     .reveal-scale.visible { opacity: 1; transform: scale(1); }
-    
     .reveal-delay-1 { transition-delay: 0.15s; }
     .reveal-delay-2 { transition-delay: 0.3s; }
     .reveal-delay-3 { transition-delay: 0.45s; }
 
-    /* PARALLAX FX */
-    .parallax-wrap { overflow: hidden; position: relative; }
-    .parallax-img { will-change: transform; transition: transform 0.1s linear; }
+    /* UTILITY CLASSES */
+    .venkateswara-wrap { text-align: center; margin-bottom: 25px; }
+    .venkateswara-img { width: 140px; height: auto; }
+    .ganesha-wrap { text-align: center; margin-bottom: 25px; }
+    .ganesha-img { width: 90px; height: auto; opacity: 0.9; }
+    .event-motif { width: 60px; opacity: 0.8; margin-bottom: 15px; }
+    .hero-datetime { font-family: var(--font-serif); font-weight: 500; font-size: 1.4rem; color: var(--text-dark); }
+    .hero-datetime strong { font-weight: 700; color: var(--text-dark); }
+    .map-container { width: 100%; max-width: 900px; margin: 0 auto 25px; border-radius: 4px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 2px solid var(--gold-accent); }
+    .map-iframe { border: 0; display: block; }
+    .route-btn-container { text-align: center; margin-bottom: 50px; }
+    .footer-divider { width: 100%; height: 1px; background: rgba(197, 160, 89, 0.5); margin: 40px 0; }
+    .footer-love-text { font-size: 0.9rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; color: var(--text-dark); line-height: 1.8; }
+    .footer-love-subtext { font-size: 1.1rem; color: var(--gold-accent); }
 
     @media(max-width: 900px) {
-      #hero, #events, .story-top { flex-direction: column; }
-      #events { margin-top: 0; }
-      .hero-right { width: 100%; max-width: 500px; margin: 40px auto 0; aspect-ratio: 3/4; overflow: hidden; position: relative; }
-      .hero-img { position: absolute; width: 100%; height: 130%; top: -15%; left: 0; margin-top: 0; right: auto; box-shadow: none; object-fit: cover; }
-      #hero { padding-top: 100px; padding-bottom: 0; }
-      .hero-left { padding: 5%; text-align: center; align-items: center; }
-      .btn-outline { align-self: center; }
       .nav-links { display: none; }
+      #hero { padding-top: 100px; }
+      #events { flex-direction: column; margin-top: 0; padding-top: 80px; }
       .events-right { padding-top: 60px; }
       .events-img-wrap { width: 100%; max-width: 500px; margin: 0 auto; aspect-ratio: 3/4; height: auto; }
-      .story-gallery { grid-template-columns: 1fr; }
-      .story-text { margin-top: 40px; }
     }
   </style>
 </head>
@@ -129,138 +132,129 @@
 <nav id="navbar">
   <a href="#" class="nav-logo">P&L</a>
   <ul class="nav-links">
-    <li><a href="#story">Our Story</a></li>
-    <li><a href="#events">Ceremony</a></li>
-    <li><a href="#footer-venue">Location</a></li>
+    <li><a href="#story">Invitation</a></li>
+    <li><a href="#events">Muhurtham</a></li>
+    <li><a href="#footer-venue">Venue</a></li>
   </ul>
 </nav>
 
 <section id="hero">
-  <div class="hero-left reveal-left visible">
-    <div class="hero-pretitle">We're Getting Married</div>
-    <h1 class="hero-title">PAVAN &<br>PADMA</h1>
+  <div class="hero-left reveal-scale visible">
+    <div class="ganesha-wrap">
+      <img src="ganesha_transparent.png" alt="Lord Ganesha" class="ganesha-img">
+    </div>
+    <div class="hero-pretitle">|| Om Sri Ganeshaya Namah ||</div>
+    <h1 class="hero-title">PAVAN <span>weds</span> PADMA</h1>
     <div class="hero-details">
-      <span style="font-family: var(--font-serif); font-style: italic; font-size: 1.3rem; color: var(--text-dark);">
-        On Friday, <strong style="font-weight: 600;">1st</strong> May 2026<br>
-        at <strong style="font-weight: 600;">10:59</strong> p.m. "Dhanur Lagnam"
+      <span class="hero-datetime">
+        Friday, <strong>1st</strong> May 2026<br>
+        at <strong>10:59</strong> p.m. <em>"Dhanur Lagnam"</em>
       </span>
     </div>
-    <a href="#events" class="btn-outline">Event Details</a>
+    <a href="#story" class="btn-outline">Read Invitation</a>
   </div>
-  <div class="hero-right reveal-scale visible reveal-delay-2 parallax-wrap">
-    <!-- Hero parallax image -->
-    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1000&auto=format&fit=crop" alt="The Couple" class="hero-img parallax-img" data-speed="0.1" />
+</section>
+
+<section id="story">
+  <div class="story-top">
+    <div class="venkateswara-wrap reveal-up">
+      <img src="venkateswara_transparent.png" alt="Lord Venkateswara" class="venkateswara-img">
+    </div>
+    <div class="story-title reveal-up">
+      With The Divine Blessings<br>of Our Ancestors
+    </div>
+    <div class="story-text reveal-up reveal-delay-1">
+      <p class="story-invite-text">Smt. & Sri Maddipatla Venkata Bhaskara Sarma and Smt. Padma Jayavani<br>cordially invite you and your family to the auspicious wedding ceremony of their dear son</p>
+      
+      <strong>Chi. PAVAN KUMAR</strong>
+      
+      <p class="story-weds">with</p>
+      
+      <strong>Chi. La. Sou. LAKSHMI NAGA PADMA SUSEELA</strong>
+      <p class="story-bride-parents">(Daughter of Sri Ganga Venkata Sundara Sarma & Smt. Valli Seetha Mahalakshmi)</p>
+      
+      <p class="story-blessings-wrap">
+        <span class="story-blessings-title">With Blessings From:</span><br>
+        Maddipatla Vardhanamma, Sri Pola Rama Murthy & Smt. Lalitha
+      </p>
+    </div>
   </div>
 </section>
 
 <section id="events">
   <div class="events-left reveal-up">
-    <h2 class="events-title">Celebrating Our Love<br>With Those We Love</h2>
+    <h2 class="events-title">Wedding Ceremonies</h2>
     <div class="events-img-wrap parallax-wrap">
       <!-- Events parallax image -->
-      <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800&auto=format&fit=crop" alt="Celebration" class="events-img parallax-img" data-speed="0.08" />
+      <img src="https://images.unsplash.com/photo-1582510003544-4b00b5f8a146?q=80&w=1000&auto=format&fit=crop" alt="Traditional Hindu Temple" class="events-img parallax-img" data-speed="0.08" />
     </div>
   </div>
   <div class="events-right">
     <div class="event-item reveal-left reveal-delay-1">
       <div class="event-num">01.</div>
       <div class="event-info">
-        <h3>Sumuhurtham</h3>
-        <p>10:59 PM, Friday, 1st May 2026</p>
-        <p>Dhanur Lagnam, Swathi Nakshatra</p>
-        <p>Sri Parabava Nama Samvatsara</p>
+        <h3>Graduation Ceremony</h3>
+        <p class="event-date-text">Friday, May 1st at 9:30 AM</p>
+        <p>Sri Vasavi Arya Vysya Kalyana Mandapam</p>
+        <p>Main Road, Elurupadu</p>
       </div>
     </div>
     <div class="event-item reveal-left reveal-delay-2">
       <div class="event-num">02.</div>
       <div class="event-info">
-        <h3>The Venue</h3>
-        <p>At Bride's Residence</p>
-        <p>Panduranga Veedhi, Elurupadu</p>
-        <p>West Godavari District, Andhra Pradesh</p>
+        <h3>Sumuhurtham</h3>
+        <p class="event-date-text">Friday, May 1st at 10:59 PM</p>
+        <p>Dhanur Lagnam, Swathi Nakshatra</p>
+        <p>Sri Parabava Nama Samvatsara</p>
+        <p class="event-subtext-mt">At Bride's Residence, Panduranga Veedhi</p>
       </div>
     </div>
     <div class="event-item reveal-left reveal-delay-1">
       <div class="event-num">03.</div>
       <div class="event-info">
-        <h3>Graduation Ceremony</h3>
-        <p>May 1st at 9:30 AM</p>
-        <p>Sri Vasavi Arya Vysya Kalyana Mandapam</p>
-        <p>Main Road, Elurupadu</p>
-      </div>
-    </div>
-    <div class="event-item reveal-left reveal-delay-2">
-      <div class="event-num">04.</div>
-      <div class="event-info">
         <h3>Reception</h3>
-        <p>May 1st from 5:00 PM to 7:00 PM</p>
-        <p>Sri Vasavi Arya Vysya Kalyana Mandapam</p>
-        <p>Main Road, Elurupadu</p>
+        <p class="event-date-text">Saturday, May 2nd from 5:00 PM to 7:00 PM</p>
+        <p>Sri Vasavi Arya Vysya Kalyana Mandapam<br>Main Road, Elurupadu, West Godavari</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="story">
-  <div class="story-top">
-    <div class="story-title reveal-right">
-      Not Just an<br>Ordinary Love Story
-    </div>
-    <div class="story-text reveal-up reveal-delay-1">
-      <p>We are delighted to invite you to celebrate our wedding. As we embark on this new journey together, your presence and blessings mean the world to us.</p>
-      <p><strong>The Groom:</strong> Pavan Kumar, Son of Sri Maddipatla Venkata Bhaskara Sarma & Smt. Padma Jayavani (Saroornagar, Hyderabad).</p>
-      <p><strong>The Bride:</strong> Lakshmi Naga Padma Suseela, Daughter of Sri Ganga Venkata Sundara Sarma & Smt. Valli Seetha Mahalakshmi (Elurupadu, West Godavari).</p>
-      <p><strong>With Blessings From:</strong> Maddipatla Vardhanamma, Sri Pola Rama Murthy & Smt. Lalitha, and our near and dear ones.</p>
-    </div>
-  </div>
-  <div class="story-gallery">
-    <div class="reveal-scale reveal-delay-1">
-      <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=600&auto=format&fit=crop" alt="Gallery Image 1" />
-    </div>
-    <div class="reveal-scale reveal-delay-2">
-      <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=600&auto=format&fit=crop" alt="Gallery Image 2" />
-    </div>
-    <div class="reveal-scale reveal-delay-3">
-      <img src="https://images.unsplash.com/photo-1510076857177-7470076d4098?q=80&w=600&auto=format&fit=crop" alt="Gallery Image 3" />
     </div>
   </div>
 </section>
 
 <section id="wishes">
-  <p class="quote-text reveal-scale">
-    “To the world you are one person, but to one person you are the world”.
-  </p>
+  <div class="reveal-scale">
+    <p class="quote-text">
+      “Mangalyam Tantunanena Mama Jeevana Hetuna<br>
+      Kanthe Badhnami Subhage Twam Jeeva Sarada Satam”
+    </p>
+    <p class="quote-translation">This is a sacred thread. This is essential for my long life.<br>I tie this around your neck. May we live happily for a hundred years.</p>
+  </div>
 </section>
 
 <section id="footer-venue">
   <div class="reveal-up">
-    <h2 class="footer-title">Join Us In Celebration</h2>
+    <h2 class="footer-title">Join Us As We Begin Our Journey</h2>
     <div class="footer-details">
-      <strong>Event Venue:</strong> Panduranga Veedhi, Elurupadu, West Godavari District, Andhra Pradesh<br><br>
-      Contact Details: 9393239596 · 9392473296<br>
-      Groom's Address: H.No. 11-5-367, Rd. No.8, Venkateshwara Colony, Saroornagar, Hyderabad — 500035
+      <strong>Contact:</strong> 9393239596 · 9392473296<br><br>
+      <strong>Groom's Address:</strong><br>H.No. 11-5-367, Rd. No.8, Venkateshwara Colony, Saroornagar, Hyderabad — 500035
     </div>
     
-    <div class="map-container" style="width: 100%; max-width: 900px; margin: 0 auto 25px; border-radius: 4px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
-      <iframe src="https://maps.google.com/maps?q=Elurupadu,%20West%20Godavari%20District,%20Andhra%20Pradesh&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="400" style="border:0; display: block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="map-container">
+      <iframe src="https://maps.google.com/maps?q=Elurupadu,%20West%20Godavari%20District,%20Andhra%20Pradesh&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="400" class="map-iframe" allowfullscreen="" loading="lazy" title="Location Map"></iframe>
     </div>
     
-    <div style="text-align: center; margin-bottom: 50px;">
-      <a href="https://www.google.com/maps/dir/?api=1&destination=Panduranga+Veedhi,+Elurupadu,+West+Godavari+District,+Andhra+Pradesh" target="_blank" rel="noopener noreferrer" class="btn-outline">Get Route Directions</a>
+    <div class="route-btn-container">
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Panduranga+Veedhi,+Elurupadu,+West+Godavari+District,+Andhra+Pradesh" target="_blank" rel="noopener noreferrer" class="btn-outline">Directions to Venue</a>
     </div>
 
-    <div style="width:100%; height:1px; background: rgba(0,0,0,0.1); margin: 40px 0;"></div>
-    <p style="font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 400;">With love from the Maddipatla Family</p>
+    <div class="footer-divider"></div>
+    <p class="footer-love-text">With Best Compliments From<br><span class="footer-love-subtext">Near & Dear, Relatives & Friends</span></p>
   </div>
 </section>
 
 <script>
-  // Navbar scroll effect
   window.addEventListener('scroll', () => {
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
   });
-
-  // Reveal animations on scroll
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -269,19 +263,8 @@
       }
     });
   }, { threshold: 0.15 });
-
   document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
     observer.observe(el);
-  });
-
-  // Wix-style Parallax image scroll effect
-  window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    document.querySelectorAll('.parallax-img').forEach(img => {
-      const speed = img.getAttribute('data-speed') || 0.1;
-      const yPos = (scrolled * speed);
-      img.style.transform = `translateY(${yPos}px)`;
-    });
   });
 </script>
 </body>
